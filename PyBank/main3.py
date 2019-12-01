@@ -17,21 +17,19 @@ average = 0
 months = len(datalist)
 print(months)
 
-#  The net total amount of "Profit/Losses" over the entire period
-netamount = sum(int(row[1]) for row in datalist) # List comprehension vs "normal"
+#  The net total amount of "Profit/Losses" over the entire period # List comprehension vs "normal" ASK HELP
+
+netamount = sum(int(row[1]) for row in datalist)  
 
 print(netamount)
 
-#
-
-
 #  The average of the changes in "Profit/Losses" over the entire period
-
 
 #  The greatest increase in profits (date and amount) over the entire period
 
 #  The greatest decrease in losses (date and amount) over the entire period
 
+#  In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
 
 
