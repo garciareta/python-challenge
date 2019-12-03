@@ -7,23 +7,31 @@ with open(os.path.join("budget_data.csv"), "r") as csvfile:
     header=next(csvreader)
     datalist = list(csvreader)
     
-    print(datalist)
-# variables def
+    #print(datalist)
+   
+    
 months = 0
-netamount = 0
-average = 0   
+netamount = 0 
     
 #  The total number of months included in the dataset
-months = len(datalist)
-print(months)
+months = str(len(datalist))
+print("The total number of months included in the dataset: " + months)
 
-#  The net total amount of "Profit/Losses" over the entire period # List comprehension vs "normal" ASK HELP
+#  The net total amount of "Profit/Losses" over the entire period 
 
-netamount = sum(int(row[1]) for row in datalist)  
+netamount = str(sum(int(row[1]) for row in datalist))  
 
-print(netamount)
+print("The net total amount of 'Profit/Losses' over the entire period: " + netamount )
 
 #  The average of the changes in "Profit/Losses" over the entire period
+total_diff = 0
+
+for i in range(1, len(datalist)):
+    diff = int(datalist[i][1]) - int(datalist[i-1][1])
+    total_diff += int(diff)
+    print(total_diff)
+
+
 
 #  The greatest increase in profits (date and amount) over the entire period
 
