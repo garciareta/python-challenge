@@ -12,7 +12,7 @@ with open(os.path.join("budget_data.csv"), "r") as csvfile:
     
 months = 0
 netamount = 0 
-    
+
 #  The total number of months included in the dataset
 months = str(len(datalist))
 print("The total number of months included in the dataset: " + months)
@@ -25,11 +25,14 @@ print("The net total amount of 'Profit/Losses' over the entire period: " + netam
 
 #  The average of the changes in "Profit/Losses" over the entire period
 total_diff = 0
-
+change = []
 for i in range(1, len(datalist)):
     diff = int(datalist[i][1]) - int(datalist[i-1][1])
     total_diff += int(diff)
-    print(total_diff)
+    change.append(diff)
+total_average = (sum(change) /len(change))
+total_average = str(round(total_average))
+print("The average of the changes in 'Profit/Losses' over the entire period: " + total_average)
 
 
 
