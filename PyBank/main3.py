@@ -48,9 +48,17 @@ print("The average of the changes in 'Profit/Losses' over the entire period: " +
 print("The greatest increase in profits (date and amount) over the entire period: "  + datalist[indexmax+1][0] + " / " + str(maxn))
 print("The greatest decrease in profits (date and amount) over the entire period: " + datalist[indexmin+1][0] + " / " + str(minn))
 
+summary = "The total number of months included in the dataset: " + str(months) + "\n"\
++ "The net total amount of 'Profit/Losses' over the entire period: " + str(netamount)  + "\n"\
++ "The average of the changes in 'Profit/Losses' over the entire period: " + str(total_average) + "\n"\
++ "The greatest increase in profits (date and amount) over the entire period: "  + datalist[indexmax+1][0] + " / " + str(maxn)+ "\n"\
++ "The greatest decrease in profits (date and amount) over the entire period: " + datalist[indexmin+1][0] + " / " + str(minn)+ "\n"\
+
 
 #  In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
-
+f = open('summary.txt','w')
+f.write(summary)
+f.close()
 
   
